@@ -11,12 +11,20 @@ FREQ=2u
 LOC=/nfsdata/realtime/CONUS/hydromet/q3rad/rainrate
 NAME=PRECIPRATE.YYYYMMDD.HHUU00.gz
 
+[PrecipForcing HRRR]
+TYPE=TIF
+UNIT=mm/s
+FREQ=15u
+LOC=/nfsdata/realtime/CONUS/FLASH/hrrr/forecast
+NAME=hrrr_YYYYMMDDHHUU.tif
+
 [PETForcing CLIMO]
 LOC=/core/reference/FLASH/ef5_data/PET
 FREQ=1m
 UNIT=mm/d
 NAME=PET_MM_usa.tif
 TYPE=TIF
+
 
 [Gauge 01010000] wantco=true lon=-69.715556 lat=46.700556 basinarea=3473.174056 outputts=false
 [Gauge 01010070] wantco=true lon=-69.751667 lat=46.893889 basinarea=442.887967 outputts=false
@@ -47084,41 +47092,18 @@ gauge=50332000
 gauge=50333500
 gauge=50345000
 
-[SacParamSet ABRFC]
-UZTWM_grid=/core/reference/FLASH/ef5_data/sac_params/uztwm_usa.tif
-UZFWM_grid=/core/reference/FLASH/ef5_data/sac_params/uzfwm_usa.tif
-UZK_grid=/core/reference/FLASH/ef5_data/sac_params/uzk_usa.tif
-ZPERC_grid=/core/reference/FLASH/ef5_data/sac_params/zperc_usa.tif
-REXP_grid=/core/reference/FLASH/ef5_data/sac_params/rexp_usa.tif
-LZTWM_grid=/core/reference/FLASH/ef5_data/sac_params/lztwm_usa.tif
-LZFSM_grid=/core/reference/FLASH/ef5_data/sac_params/lzfsm_usa.tif
-LZFPM_grid=/core/reference/FLASH/ef5_data/sac_params/lzfpm_usa.tif
-LZSK_grid=/core/reference/FLASH/ef5_data/sac_params/lzsk_usa.tif
-LZPK_grid=/core/reference/FLASH/ef5_data/sac_params/lzpk_usa.tif
-PFREE_grid=/core/reference/FLASH/ef5_data/sac_params/pfree_usa.tif
+[CrestParamSet ABRFC]
+wm_grid=/core/reference/FLASH/ef5_data/crest_params/wm_usa.tif
+im_grid=/core/reference/FLASH/ef5_data/crest_params/im_usa.tif
+fc_grid=/core/reference/FLASH/ef5_data/crest_params/ksat_usa.tif
+b_grid=/core/reference/FLASH/ef5_data/crest_params/b_usa.tif
 gauge=0
-UZTWM=1.0
-UZFWM=1.0
-UZK=1.0
-PCTIM=0.101
-ADIMP=0.10
-RIVA=1.001
-ZPERC=1.0
-REXP=1.0
-LZTWM=1.0
-LZFSM=1.0
-LZFPM=1.0
-LZSK=1.0
-LZPK=1.0
-PFREE=1.0
-SIDE=0.0
-RSERV=0.3
-ADIMC=1.0
-UZTWC=0.55
-UZFWC=0.14
-LZTWC=0.56
-LZFSC=0.11
-LZFPC=0.46
+wm=1.0
+b=1.0
+im=0.01 
+ke=1.0
+fc=1.00 
+iwu=75.0 
 
 [kwparamset abrfc]
 under_grid=/core/reference/FLASH/ef5_data/kw_params/ksat_usa.tif
@@ -47137,28 +47122,24 @@ isu=00.0
 
 [Task Simu]
 STYLE=simu
-MODEL=sac
+MODEL=crest
 ROUTING=KW
 BASIN=0
 PRECIP=MRMS
+PRECIPFORECAST=HRRR
 PET=CLIMO
 OUTPUT={OUTPUTPATH}
-STATES=/core/reference/FLASH/ef5_data/states/states_{SYSTEMMODEL}
+STATES=/core/reference/FLASH/ef5_data/states/states_crest_hrrr
 defaultparamsgauge=0
 PARAM_SET=Abrfc
 ROUTING_PARAM_Set=abrfc
-output_grids=MAXUNITSTREAMFLOW|MAXSOILMOISTURE|MAXSTREAMFLOW|MAXTHRESHOLDEXCEEDANCE
-action_grid=/core/reference/FLASH/ef5_data/thres_params/Action_GAMLSS_1km_mrms_grid_v060315.tif
-minor_grid=/core/reference/FLASH/ef5_data/thres_params/Minor_GAMLSS_1km_mrms_grid_v060315.tif
-moderate_grid=/core/reference/FLASH/ef5_data/thres_params/Moderate_GAMLSS_1km_mrms_grid_v060315.tif
-major_grid=/core/reference/FLASH/ef5_data/thres_params/Major_GAMLSS_1km_mrms_grid_v060315.tif
+output_grids=MAXUNITSTREAMFLOW|MAXSTREAMFLOW
 TIMESTEP=2u
 TIME_BEGIN={TIMEBEGIN}
 TIME_WARMEND={TIMEWARMEND}
 TIME_STATE={TIMESTATE}
 TIME_END={TIMEEND}
-co_file={OUTPUTPATH}/co_{SYSTEMMODEL}.csv
-TIMESTEP_LR=20u
+TIMESTEP_LR=15u
 TIME_BEGIN_LR={TIMEBEGINLR}
 
 [Execute]
