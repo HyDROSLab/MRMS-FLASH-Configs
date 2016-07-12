@@ -1,0 +1,7 @@
+*/2 * * * * /core/custom-scripts/FLASH/precip_calcs/run.csh >/dev/null 2>&1
+*/10 * * * * /core/custom-scripts/FLASH/ef5_run/run_realtime_crest.py >/dev/null 2>&1
+*/30 * * * * /core/custom-scripts/FLASH/ef5_run/run_realtime_crest_hrrr.py >/dev/null 2>&1
+*/10 * * * * /core/custom-scripts/FLASH/ef5_run/run_realtime_sac.py >/dev/null 2>&1
+*/10 * * * * /core/custom-scripts/FLASH/ef5_run/run_realtime_hp.py >/home/mrms/hp.log 2>&1
+5 * * * * /core/custom-scripts/FLASH/ffg/get_ffg.csh >/dev/null 2>&1
+5 * * * * /core/custom-scripts/FLASH/hrrr/gethrrrnew.csh >/dev/null 2>&1
