@@ -15,7 +15,7 @@ NAME=PRECIPRATE.YYYYMMDD.HHUU00.gz
 LOC=/core/reference/FLASH/ef5_data/PET
 FREQ=1m
 UNIT=mm/d
-NAME=PET_MM_usa.tif
+NAME=PET_MM_usa_20160816c.tif
 TYPE=TIF
 
 
@@ -47086,10 +47086,10 @@ gauge=50333500
 gauge=50345000
 
 [CrestParamSet ABRFC]
-wm_grid=/core/reference/FLASH/ef5_data/crest_params/wm_usa.tif
-im_grid=/core/reference/FLASH/ef5_data/crest_params/im_usa.tif
-fc_grid=/core/reference/FLASH/ef5_data/crest_params/ksat_usa.tif
-b_grid=/core/reference/FLASH/ef5_data/crest_params/b_usa.tif
+wm_grid=/core/reference/FLASH/ef5_data/crest_params/wm_usa_20160815c.tif
+im_grid=/core/reference/FLASH/ef5_data/crest_params/im_usa_20160815c.tif
+fc_grid=/core/reference/FLASH/ef5_data/crest_params/ksat_usa_20160815c.tif
+b_grid=/core/reference/FLASH/ef5_data/crest_params/b_usa_20160815c.tif
 gauge=0
 wm=1.0
 b=1.0
@@ -47099,11 +47099,11 @@ fc=1.00
 iwu=75.0 
 
 [kwparamset abrfc]
-under_grid=/core/reference/FLASH/ef5_data/kw_params/ksat_usa.tif
-leaki_grid=/core/reference/FLASH/ef5_data/kw_params/leaki_usa.tif
-alpha_grid=/core/reference/FLASH/ef5_data/kw_params/alpha_usa.tif
-beta_grid=/core/reference/FLASH/ef5_data/kw_params/beta_usa.tif
-alpha0_grid=/core/reference/FLASH/ef5_data/kw_params/alpha0_usa.tif
+under_grid=/core/reference/FLASH/ef5_data/kw_params/ksat_usa_20160816c.tif
+leaki_grid=/core/reference/FLASH/ef5_data/kw_params/leaki_usa_20160816c.tif
+alpha_grid=/core/reference/FLASH/ef5_data/kw_params/alpha_usa_20160816c.tif
+beta_grid=/core/reference/FLASH/ef5_data/kw_params/beta_usa_20160816c.tif
+alpha0_grid=/core/reference/FLASH/ef5_data/kw_params/alpha0_usa_20160816c.tif
 gauge=0
 alpha0=1.0
 alpha=1.0

@@ -15,7 +15,7 @@ NAME=PRECIPRATE.YYYYMMDD.HHUU00.gz
 LOC=/core/reference/FLASH/ef5_data/PET
 FREQ=1m
 UNIT=mm/d
-NAME=PET_MM_usa.tif
+NAME=PET_MM_usa_20160816c.tif
 TYPE=TIF
 
 [Gauge 01010000] wantco=true lon=-69.715556 lat=46.700556 basinarea=3473.174056 outputts=false
@@ -47090,11 +47090,11 @@ precip=1.0
 split=1.0
 
 [kwparamset abrfc]
-under_grid=/core/reference/FLASH/ef5_data/kw_params/ksat_usa.tif
-leaki_grid=/core/reference/FLASH/ef5_data/kw_params/leaki_usa.tif
-alpha_grid=/core/reference/FLASH/ef5_data/kw_params/alpha_usa.tif
-beta_grid=/core/reference/FLASH/ef5_data/kw_params/beta_usa.tif
-alpha0_grid=/core/reference/FLASH/ef5_data/kw_params/alpha0_usa.tif
+under_grid=/core/reference/FLASH/ef5_data/kw_params/ksat_usa_20160816c.tif
+leaki_grid=/core/reference/FLASH/ef5_data/kw_params/leaki_usa_20160816c.tif
+alpha_grid=/core/reference/FLASH/ef5_data/kw_params/alpha_usa_20160816c.tif
+beta_grid=/core/reference/FLASH/ef5_data/kw_params/beta_usa_20160816c.tif
+alpha0_grid=/core/reference/FLASH/ef5_data/kw_params/alpha0_usa_20160816c.tif
 gauge=0
 alpha0=1.0
 alpha=1.0
