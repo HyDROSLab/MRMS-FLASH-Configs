@@ -11,12 +11,12 @@ FREQ=2u
 LOC=/nfsdata/realtime/CONUS/hydromet/q3rad/rainrate
 NAME=PRECIPRATE.YYYYMMDD.HHUU00.gz
 
-[PrecipForcing HRRR]
+[PrecipForcing GFS]
 TYPE=TIF
 UNIT=mm/s
-FREQ=15u
-LOC=/nfsdata/realtime/CONUS/FLASH/hrrr/forecast
-NAME=hrrr_YYYYMMDDHHUU.tif
+FREQ=1h
+LOC=/nfsdata/realtime/CONUS/FLASH/gfs/forecast
+NAME=gfs_YYYYMMDDHHUU.tif
 
 [PETForcing CLIMO]
 LOC=/core/reference/FLASH/ef5_data/PET
@@ -47126,10 +47126,10 @@ MODEL=crest
 ROUTING=KW
 BASIN=0
 PRECIP=MRMS
-PRECIPFORECAST=HRRR
+PRECIPFORECAST=GFS
 PET=CLIMO
 OUTPUT={OUTPUTPATH}
-STATES=/core/reference/FLASH/ef5_data/states/states_crest_hrrr
+STATES=/core/reference/FLASH/ef5_data/states/states_crest_gfs
 defaultparamsgauge=0
 PARAM_SET=Abrfc
 ROUTING_PARAM_Set=abrfc
@@ -47139,7 +47139,7 @@ TIME_BEGIN={TIMEBEGIN}
 TIME_WARMEND={TIMEWARMEND}
 TIME_STATE={TIMESTATE}
 TIME_END={TIMEEND}
-TIMESTEP_LR=15u
+TIMESTEP_LR=1h
 TIME_BEGIN_LR={TIMEBEGINLR}
 
 [Execute]
